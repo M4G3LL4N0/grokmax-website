@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0b1220;
+  --panel: #101a2c;
+  --line: #1d2a3f;
+  --signal: #22d3ee;
+  --iris: #818cf8;
+  --frost: #e2e8f0;
+  --mist: #94a3b8;
+  --dim: #64748b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--ink);
+  color: var(--frost);
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: #fff;
+}
