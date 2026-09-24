@@ -52,7 +52,7 @@ export default function Hero() {
               ["$0", "model spend on a math task"],
               ["5", "cache layers (+L0 hot)"],
               ["33", "benchmark fixtures, 100% match"],
-              ["163", "tests, all passing"],
+              ["170", "tests, all passing"],
             ].map(([n, label]) => (
               <div key={label}>
                 <dt className="font-mono text-2xl font-semibold text-signal">{n}</dt>
