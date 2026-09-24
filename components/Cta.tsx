@@ -10,8 +10,8 @@ export default function Cta() {
           Scale down before you scale up.
         </h2>
         <p className="mt-5 text-lg text-mist">
-          Clone the repo, install with pnpm, and run the doctor on your own workspace. See
-          what stops being expensive.
+          Clone the repo, install with pnpm, and run the doctor on your own workspace. See which
+          of your own tasks stop needing an expensive executor.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <a

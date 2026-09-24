@@ -2,32 +2,32 @@ const stages = [
   {
     n: "01",
     title: "Slice context",
-    body: "Send ~1,500 relevant tokens instead of 20,000. The reduction is a proxy for token cost — never a billed measurement.",
+    body: "Target ~1,500 relevant tokens instead of 20,000. That is a design budget, not a measured typical result — and token reduction is a proxy for cost, never a billed measurement.",
   },
   {
     n: "02",
     title: "Compile the micro-prompt",
-    body: "Hard constraints survive verbatim. validatePreservation fails loudly if a constraint token is ever lost in compression.",
+    body: "Hard constraints survive verbatim. validatePreservation fails loudly if a constraint token — including a negation like “do not” — is ever lost in compression.",
   },
   {
     n: "03",
-    title: "Route to the cheapest worker",
-    body: "deterministic > api > chatgpt > opencode > grokbot. GrokBot is the most capable and the most expensive — so it is always last.",
+    title: "Route to the cheapest capable worker",
+    body: "deterministic > api > chatgpt > opencode > grokbot. GrokBot is the most capable and the most expensive, so it sits last in the hierarchy — unless you explicitly pin an executor.",
   },
   {
     n: "04",
     title: "Execute responsibly",
-    body: "Zero-cost local resolvers handle math, hashing, file counts, and git. Over-budget GrokBot routes refuse rather than pretend.",
+    body: "Zero-model-cost local resolvers handle math, hashing, file counts, and git. A worker that exits non-zero is reported as a failure, never as a success.",
   },
   {
     n: "05",
     title: "Cache across five layers",
-    body: "L1 exact, L2 normalized, L3 semantic, L4 artifact, L5 durable knowledge. Identical and near-identical tasks cost nothing twice.",
+    body: "L1 exact, L2 normalized, L3 semantic, L4 artifact, L5 durable knowledge, plus an L0 in-flight hot cache. A cached result is only reused when its critical literals still match.",
   },
   {
     n: "06",
     title: "Ledger everything",
-    body: "Every run is recorded with honest labels: measured, estimated, or proxy. No number gets to pretend it is something it is not.",
+    body: "Every run is recorded with honest labels: measured, estimated, or proxy. Measured and proxy rows are never averaged into one number.",
   },
 ];
 
@@ -69,9 +69,9 @@ export default function Pipeline() {
             <thead className="bg-panel text-xs uppercase tracking-wider text-dim">
               <tr>
                 <th className="px-5 py-3">Route</th>
-                <th className="px-5 py-3">Cost</th>
+                <th className="px-5 py-3">Est. cost</th>
                 <th className="px-5 py-3">Handles</th>
-                <th className="px-5 py-3 text-right">Preferred</th>
+                <th className="px-5 py-3 text-right">Chosen</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line text-frost">
@@ -80,11 +80,15 @@ export default function Pipeline() {
                   <td className="px-5 py-3 font-semibold text-signal">{route}</td>
                   <td className="px-5 py-3 text-mist">{cost}</td>
                   <td className="px-5 py-3 text-mist">{handles}</td>
-                  <td className="px-5 py-3 text-right">{preferred ? "always" : "only when nothing else can"}</td>
+                  <td className="px-5 py-3 text-right">{preferred ? "when it fits" : "only when nothing else can"}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+          <p className="border-t border-line px-5 py-3 text-xs leading-relaxed text-dim">
+            Cost column is a relative ranking from GrokMax&rsquo;s internal estimate model, not a
+            measured price sheet. GrokBot is unavailable unless a bridge is configured.
+          </p>
         </div>
       </div>
     </section>

@@ -18,6 +18,14 @@ export default function Footer() {
           <span>MIT</span>
         </div>
       </div>
+      <div className="mx-auto mt-6 max-w-6xl px-5">
+        <p className="max-w-3xl text-xs leading-relaxed text-dim">
+          GrokMax is an independent, open-source project. It is not affiliated with, endorsed
+          by, or sponsored by Cursor, xAI, or any other platform vendor. &ldquo;GrokBot&rdquo;
+          and related names are used descriptively to describe the workload GrokMax routes
+          around; all trademarks remain the property of their respective owners.
+        </p>
+      </div>
     </footer>
   );
 }

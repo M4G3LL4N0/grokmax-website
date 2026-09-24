@@ -1,13 +1,13 @@
 const rows = [
   {
     label: "Benchmark fixtures",
-    value: "33 tasks · 5 suites · 100% resolve · 100% outcome",
-    kind: "measured on our machine, deterministic resolver only",
+    value: "33 fixtures · 5 suites · 100% match",
+    kind: "measured locally, deterministic resolver only. 5 escape fixtures are expected declines, not successful resolutions",
   },
   {
     label: "Automated tests",
-    value: "109 tests across 12 files",
-    kind: "locally verified, reproducible via pnpm vitest run",
+    value: "151 tests across 18 files",
+    kind: "locally verified at v0.1.1, reproducible via pnpm test in the grokmax repo",
   },
   {
     label: "Math task",
@@ -64,8 +64,8 @@ export default function Honest() {
         </div>
 
         <p className="mt-6 max-w-2xl text-xs leading-relaxed text-dim">
-          We never claim to measure GrokBot&rsquo;s platform usage. We also never release a
-          version whose doctor, tests, or performance gates are red. If GrokMax cannot prove
+          We never claim to measure GrokBot&rsquo;s platform usage. We also never ship a
+          version whose lint, typecheck, test, or build gates are red. If GrokMax cannot prove
           it, GrokMax does not claim it.
         </p>
       </div>

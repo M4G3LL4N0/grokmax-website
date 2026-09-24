@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="max-w-3xl">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-signal">
-            Deterministic-first agent routing · v0.1
+            Deterministic-first agent routing · v0.1.1
           </p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.05] tracking-tight text-frost md:text-6xl">
             Scale down before you{" "}
@@ -27,8 +27,9 @@ export default function Hero() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-mist">
             GrokMax is a deterministic-first execution pipeline for GrokBot-heavy teams. It
-            routes every task to the cheapest capable executor, slims context to what matters,
-            and caches the result across five layers — so nothing is paid for twice.
+            sends each task to the cheapest executor that can actually do the work, slims
+            context to what matters, and caches the result so an identical ask is not paid
+            for twice.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -48,10 +49,10 @@ export default function Hero() {
           </div>
           <dl className="mt-12 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4">
             {[
-              ["$0", "cost to answer a math task"],
-              ["5", "cache layers"],
-              ["33", "benchmark fixtures at 100%"],
-              ["109", "tests, all passing"],
+              ["$0", "model spend on a math task"],
+              ["5", "cache layers (+L0 hot)"],
+              ["33", "benchmark fixtures, 100% match"],
+              ["151", "tests, all passing"],
             ].map(([n, label]) => (
               <div key={label}>
                 <dt className="font-mono text-2xl font-semibold text-signal">{n}</dt>
@@ -60,9 +61,10 @@ export default function Hero() {
             ))}
           </dl>
           <p className="mt-6 max-w-2xl text-xs leading-relaxed text-dim">
-            Fixtures and tests measured on our machine with the deterministic resolver only —
-            zero spend, no model in the loop. Savings on GrokBot usage are router-level proxies,
-            honestly labeled as such.
+            Fixtures and tests run locally with the deterministic resolver only — zero model
+            spend, no model in the loop. 5 of the 33 fixtures are escape cases where declining
+            is the correct outcome. Savings on GrokBot usage are router-level proxies, honestly
+            labeled as such. The terminal above is an illustrative example, not captured output.
           </p>
         </div>
       </div>

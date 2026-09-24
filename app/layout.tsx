@@ -4,7 +4,7 @@ import "./globals.css";
 
 const title = "GrokMax — scale down before you scale up";
 const description =
-  "Deterministic-first routing, five layers of cache, and honest savings for GrokBot-heavy engineering teams. Most tasks are not GrokBot-only tasks. GrokMax catches them before they cost anything.";
+  "Deterministic-first routing, five layers of cache, and honestly-labeled savings proxies for GrokBot-heavy engineering teams. Independent project, not affiliated with Cursor or xAI.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://grokmax.noaerth.com"),
@@ -28,6 +28,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "GrokMax contributors" }],
   creator: "GrokMax contributors",
+  alternates: {
+    canonical: "/"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true
+    }
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

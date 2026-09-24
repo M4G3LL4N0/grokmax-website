@@ -9,16 +9,17 @@ const cmds: Array<[string, string]> = [
   ["grokmax status", "One-view aggregate across everything"],
 ];
 
-const code = `$ grokmax doctor
-STATUS: 17 healthy, 1 warning, 0 failure
-  ✓ node            Node 26.5.0
-  ✓ sqlite          SQLite read/write verified
-  ✓ exact-cache     L1 round-trip verified
-  ✓ semantic-cache  reachable, cold miss as expected
-  ✓ routing         router works; sample route=opencode
-  ✓ prompt-compiler constraints preserved verbatim
-  ✓ opencode-cli    OpenCode CLI detected
-  ! grokbot-bridge  GROKMAX_GROKBOT_BRIDGE unset; deemed unavailable`;
+const code = `# grokmax doctor
+STATUS: WARNING
+SUMMARY: 15 healthy, 3 warning, 0 failure
+  ! node             Node 22.22.0 (>=24 recommended for node:sqlite)
+  ✓ sqlite           SQLite read/write verified
+  ✓ exact-cache      L1 exact cache round-trip verified
+  ✓ semantic-cache   semantic cache reachable, cold miss as expected
+  ✓ routing          router works; sample route=opencode
+  ✓ prompt-compiler  compiler works; constraints preserved verbatim
+  ! opencode-cli     OpenCode CLI not detected; repo work will fail
+  ! grokbot-bridge   GROKMAX_GROKBOT_BRIDGE unset; GrokBot unavailable`;
 
 export default function CLI() {
   return (
@@ -38,11 +39,15 @@ export default function CLI() {
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <div className="overflow-hidden rounded-lg border border-line bg-ink/60">
             <div className="border-b border-line bg-panel px-4 py-2.5 font-mono text-xs uppercase tracking-wider text-dim">
-              Inside the terminal
+              Example output from a local run
             </div>
             <pre className="overflow-x-auto px-5 py-5 font-mono text-[0.78rem] leading-relaxed text-mist">
               {code}
             </pre>
+            <p className="border-t border-line px-5 py-3 text-xs leading-relaxed text-dim">
+              Sample output from one machine at v0.1.1. Warnings here reflect that machine&rsquo;s
+              environment (Node 22, no OpenCode CLI, no GrokBot bridge), not a defect in GrokMax.
+            </p>
           </div>
 
           <div className="rounded-lg border border-line bg-panel p-6">
