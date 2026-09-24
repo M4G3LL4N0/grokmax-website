@@ -6,7 +6,7 @@ const rows = [
   },
   {
     label: "Automated tests",
-    value: "151 tests across 18 files",
+    value: "163 tests across 19 files",
     kind: "locally verified at v0.1.1, reproducible via pnpm test in the grokmax repo",
   },
   {
