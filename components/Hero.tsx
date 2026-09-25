@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="max-w-3xl">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-signal">
-            Deterministic-first agent routing · v0.1.1
+            Deterministic-first agent routing · v0.2.0-rc.1
           </p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.05] tracking-tight text-frost md:text-6xl">
             Scale down before you{" "}
@@ -52,7 +52,7 @@ export default function Hero() {
               ["$0", "model spend on a math task"],
               ["5", "cache layers (+L0 hot)"],
               ["33", "benchmark fixtures, 100% match"],
-              ["170", "tests, all passing"],
+              ["279", "tests, all passing"],
             ].map(([n, label]) => (
               <div key={label}>
                 <dt className="font-mono text-2xl font-semibold text-signal">{n}</dt>

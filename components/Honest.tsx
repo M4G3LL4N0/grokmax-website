@@ -6,8 +6,8 @@ const rows = [
   },
   {
     label: "Automated tests",
-    value: "170 tests across 20 files",
-    kind: "measured on post–Gate B main at core SHA f9a320b, reproducible via pnpm test in the grokmax repo",
+    value: "279 tests across 26 files",
+    kind: "measured locally on v0.2.0-rc.1, reproducible via pnpm test in the grokmax repo",
   },
   {
     label: "Math task",
@@ -23,6 +23,11 @@ const rows = [
     label: "Context reduction",
     value: "proportion of tokens trimmed",
     kind: "proxy for token cost, not a billed measurement",
+  },
+  {
+    label: "Cursor / platform usage",
+    value: "unknown",
+    kind: "there is no billing API; a number appears only from two measured_platform observations",
   },
 ];
 
